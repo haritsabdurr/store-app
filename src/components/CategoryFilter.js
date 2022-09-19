@@ -2,6 +2,11 @@ import { useState } from 'react';
 
 const CategoryFilter = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState();
+
+  const handleCategory = (e) => {
+    setSelectedCategory(e.target.value);
+  };
 
   return (
     <div className='flex items-stretch bg-white border rounded-md mt-6'>
@@ -37,6 +42,7 @@ const CategoryFilter = () => {
             isOpen ? 'block' : 'hidden'
           } absolute right-0 z-10 w-56 mt-2 bg-white border border-gray-100 shadow-lg origin-top-right rounded-md`}
           role='menu'
+          onChange={handleCategory}
         >
           <div className='p-2'>
             <a

@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useNavigate, useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Breadcrumbs from '../components/Breadcrumbs';
 
 const View = () => {
-  const navigate = useNavigate();
   const url = 'https://fakestoreapi.com/products';
 
   const [isLoading, setIsLoading] = useState(false);
@@ -42,7 +41,7 @@ const View = () => {
   }, []);
 
   return (
-    <div className='container mx-auto px-4'>
+    <div className='container mx-auto px-4 pt-1.5'>
       <Breadcrumbs list={product} />
       {!isLoading ? (
         <div
@@ -102,7 +101,7 @@ const View = () => {
                   </div>
 
                   <p className='text-2xl font-bold mt-4 sm:mt-0'>
-                    ${product?.price}
+                    ${qty * product?.price}
                   </p>
                 </div>
 
