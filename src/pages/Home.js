@@ -53,7 +53,7 @@ const Home = () => {
         <CategoryFilter filter={filterSelected} />
       </div>
 
-      <div className='grid sm:grid-cols-4 gap-6 py-6 px-12'>
+      <div className='grid sm:grid-cols-4 gap-6 py-6 px-8'>
         {filteredProduct.map((newProd) => (
           <ProductCard content={newProd} />
         ))}
