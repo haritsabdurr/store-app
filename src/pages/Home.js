@@ -47,13 +47,13 @@ const Home = () => {
   });
 
   return (
-    <div className='container mx-auto px-4 '>
+    <div className='container mx-auto px-4'>
       <div className='flex items-center'>
         <Breadcrumbs list={product} />
         <CategoryFilter filter={filterSelected} />
       </div>
 
-      <div className='grid sm:grid-cols-4 gap-6 py-6'>
+      <div className='grid sm:grid-cols-4 gap-6 py-6 px-12'>
         {filteredProduct.map((newProd) => (
           <ProductCard content={newProd} />
         ))}
