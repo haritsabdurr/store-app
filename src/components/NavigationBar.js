@@ -50,7 +50,7 @@ const NavigationBar = () => {
           <div className='flex items-center gap-3'>
             <div className='sm:gap-4 sm:flex'>
               <a
-                className='px-5 py-2.5 text-sm font-medium text-white bg-teal-600 rounded-md shadow dark:hover:bg-teal-500'
+                className='px-5 py-2.5 text-sm font-medium text-black bg-yellow-400 rounded-md shadow dark:hover:bg-teal-500'
                 href='/'
               >
                 Login
@@ -59,42 +59,6 @@ const NavigationBar = () => {
           </div>
         </div>
       </div>
-      <motion.div
-        className={`${
-          isOpen ? 'block' : 'hidden'
-        } md:hidden z-40 absolute bg-white w-full rounded-sm shadow-lg`}
-        initial='exit'
-        animate={isOpen ? 'enter' : 'exit'}
-        variants={subMenuAnimate}
-      >
-        <div className='px-2 pt-2 pb-3 space-y-1'>
-          <a className='text-slate-900 hover:bg-teal-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
-            About
-          </a>
-
-          <a className='text-slate-900 hover:bg-teal-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
-            Careers
-          </a>
-
-          <a className='text-slate-900 hover:bg-teal-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
-            History
-          </a>
-
-          <a className='text-slate-900 hover:bg-teal-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
-            Services
-          </a>
-          <a className='text-slate-900 hover:bg-teal-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'>
-            Projects
-          </a>
-
-          <a
-            className='text-slate-900 hover:bg-teal-600 hover:text-white block px-3 py-2 rounded-md text-base font-medium'
-            href='/blog'
-          >
-            Blog
-          </a>
-        </div>
-      </motion.div>
     </header>
   );
 };
