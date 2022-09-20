@@ -101,12 +101,18 @@ const View = () => {
                   </div>
 
                   <p className='text-2xl font-bold mt-4 sm:mt-0'>
-                    ${qty * product?.price}
+                    ${product?.price}
                   </p>
                 </div>
 
                 <div className='pb-6 prose max-w-none mt-6'>
                   <p className='text-justify'>{product?.description}</p>
+                </div>
+
+                <div>
+                  <p className='text-xl font-semibold mt-4 sm:mt-0'>
+                    Total : ${qty * product?.price}
+                  </p>
                 </div>
 
                 <form className='mt-8'>
