@@ -27,12 +27,11 @@ const NavigationBar = () => {
   };
 
   return (
-    <header className='bg-white dark:bg-gray-900'>
+    <header className='bg-white dark:bg-sky-800'>
       <div className='px-4 mx-auto max-w-screen-xl sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between h-16'>
+        <div className='flex items-center justify-between h-16 sm:px-12'>
           <div className='md:flex md:items-center md:gap-12'>
-            <a className='block text-teal-600 dark:text-teal-600' href='/'>
-              <span className='sr-only'>Home</span>
+            <a className='flex items-center text-white' href='/'>
               <svg
                 className='h-8'
                 viewBox='0 0 28 24'
@@ -44,74 +43,11 @@ const NavigationBar = () => {
                   fill='currentColor'
                 />
               </svg>
+              <p className='text-xl font-bold ml-2'>TokoKita</p>
             </a>
           </div>
 
-          <div className='hidden md:block'>
-            <nav aria-labelledby='header-navigation'>
-              <h2 className='sr-only' id='header-navigation'>
-                Header navigation
-              </h2>
-
-              <ul className='flex items-center text-sm gap-6'>
-                <li>
-                  <a
-                    className='text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75'
-                    href='/'
-                  >
-                    About
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className='text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75'
-                    href='/'
-                  >
-                    Careers
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className='text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75'
-                    href='/'
-                  >
-                    History
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className='text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75'
-                    href='/'
-                  >
-                    Services
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className='text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75'
-                    href='/'
-                  >
-                    Projects
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    className='text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75'
-                    href='/blog'
-                  >
-                    Blog
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
-          <div className='flex items-center gap-4'>
+          <div className='flex items-center gap-3'>
             <div className='sm:gap-4 sm:flex'>
               <a
                 className='px-5 py-2.5 text-sm font-medium text-white bg-teal-600 rounded-md shadow dark:hover:bg-teal-500'
@@ -119,37 +55,6 @@ const NavigationBar = () => {
               >
                 Login
               </a>
-
-              <div className='hidden sm:flex'>
-                <a
-                  LName='px-5 py-2.5 text-sm font-medium text-teal-600 bg-gray-100 rounded-md dark:bg-gray-800 dark:text-white dark:hover:text-white/75'
-                  href='/'
-                >
-                  Register
-                </a>
-              </div>
-            </div>
-
-            <div className='block md:hidden'>
-              <button
-                className='p-2 text-gray-600 bg-gray-100 rounded transition hover:text-gray-600/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75'
-                onClick={() => setIsOpen(!isOpen)}
-              >
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  className='w-5 h-5'
-                  fill='none'
-                  viewBox='0 0 24 24'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    d='M4 6h16M4 12h16M4 18h16'
-                  />
-                </svg>
-              </button>
             </div>
           </div>
         </div>

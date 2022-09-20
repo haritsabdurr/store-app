@@ -11,7 +11,7 @@ const ProductCard = ({ content }) => {
         <a className='block' href='/product/limited-edition-sports-trainer'>
           <div className='flex justify-center'>
             <strong className='relative h-6 px-4 text-xs text-white uppercase bg-black leading-6'>
-              New
+              {content.category}
             </strong>
           </div>
 
