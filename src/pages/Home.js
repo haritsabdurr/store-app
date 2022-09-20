@@ -6,9 +6,11 @@ import CategoryFilter from '../components/CategoryFilter';
 
 const Home = () => {
   const [product, setProduct] = useState([]);
+
   const url = 'https://fakestoreapi.com/products';
 
   const [isLoading, setIsLoading] = useState(false);
+  const [filterItem, setFilterItem] = useState('all');
 
   const fetchProducts = () => {
     try {
@@ -26,19 +28,35 @@ const Home = () => {
     fetchProducts();
   }, []);
 
+  const filterSelected = (filterValue) => {
+    setFilterItem(filterValue);
+  };
+
+  const filteredProduct = product.filter((prod) => {
+    if (filterItem === "men's clothing") {
+      return prod.category === "men's clothing";
+    } else if (filterItem === "women's clothing") {
+      return prod.category === "women's clothing";
+    } else if (filterItem === 'electronics') {
+      return prod.category === 'electronics';
+    } else if (filterItem === 'jewelery') {
+      return prod.category === 'jewelery';
+    } else if (filterItem === 'all') {
+      return prod;
+    }
+  });
+
   return (
     <div className='container mx-auto px-4 '>
       <div className='flex items-center'>
         <Breadcrumbs list={product} />
-        <CategoryFilter />
+        <CategoryFilter filter={filterSelected} />
       </div>
 
       <div className='grid sm:grid-cols-4 gap-6 py-6'>
-        {product
-          .filter((prod) => prod.category === 'electronics')
-          .map((newProd) => (
-            <ProductCard content={newProd} />
-          ))}
+        {filteredProduct.map((newProd) => (
+          <ProductCard content={newProd} />
+        ))}
       </div>
       {!isLoading && (
         <div role='status' className='flex justify-center items-center py-32'>
