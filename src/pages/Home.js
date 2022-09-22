@@ -71,7 +71,10 @@ const Home = () => {
           ))}
         </div>
         {!isLoading && (
-          <div role='status' className='flex justify-center items-center py-32'>
+          <div
+            role='status'
+            className='flex justify-center items-center py-44 sm:py-52'
+          >
             <svg
               aria-hidden='true'
               className='mr-2 w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-teal-600'

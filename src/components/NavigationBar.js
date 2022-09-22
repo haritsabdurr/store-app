@@ -27,7 +27,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <header className='bg-white dark:bg-sky-800'>
+    <header className='bg-sky-800'>
       <div className='px-4 mx-auto max-w-screen-xl sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between h-16 sm:px-12'>
           <div className='md:flex md:items-center md:gap-12'>
