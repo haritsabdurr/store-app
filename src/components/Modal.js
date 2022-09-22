@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 const Modal = ({ open, close }) => {
   if (!open) return null;
   return (
@@ -9,7 +7,7 @@ const Modal = ({ open, close }) => {
       ariaHidden='true'
       className='block overflow-y-auto overflow-x-hidden pt-6 fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal h-full bg-gray-800 bg-opacity-50'
     >
-      <div className='relative mx-auto mt-24 p-4 w-full max-w-2xl h-full md:h-auto'>
+      <div className='relative mx-auto mt-32 p-4 w-full max-w-2xl h-full md:h-auto'>
         <div className='relative bg-white rounded-lg shadow dark:bg-sky-800'>
           <div className='flex justify-center items-start p-4 rounded-t border-b dark:border-gray-600'>
             <h3 className='text-xl text-center font-semibold text-gray-900 dark:text-white'>

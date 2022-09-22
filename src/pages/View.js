@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Breadcrumbs from '../components/Breadcrumbs';
+import CartPopup from '../components/CartPopup';
 
 const View = () => {
   const url = 'https://fakestoreapi.com/products';
 
   const [isLoading, setIsLoading] = useState(false);
+  const [openPopup, setOpenPopup] = useState(false);
   const [qty, setQty] = useState(1);
 
   const incrementQty = () => {
@@ -21,10 +23,14 @@ const View = () => {
     }
   };
 
+  const addToCart = () => {
+    setOpenPopup(true);
+  };
+
   const [product, setProduct] = useState([]);
   const { id } = useParams();
 
-  const fetchProductbyId = async () => {
+  const fetchProductbyId = () => {
     try {
       setTimeout(async () => {
         const response = await axios.get(`${url}/${id}`);
@@ -42,7 +48,15 @@ const View = () => {
 
   return (
     <div className='container mx-auto px-4 pt-1.5'>
+      <CartPopup
+        cartAdd={product}
+        qty={qty}
+        total={qty * product?.price}
+        open={openPopup}
+        close={() => setOpenPopup(false)}
+      />
       <Breadcrumbs list={product} />
+
       {!isLoading ? (
         <div
           role='status'
@@ -146,7 +160,7 @@ const View = () => {
 
                     <a
                       type='submit'
-                      href={`${url}/category/jewelery`}
+                      onClick={addToCart}
                       className='block px-5 py-3 ml-3 text-xs font-medium text-white bg-green-600 rounded hover:bg-green-500'
                     >
                       Add to Cart
