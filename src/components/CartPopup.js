@@ -53,7 +53,7 @@ const CartPopup = ({ cartAdd, qty, total, open, close }) => {
         </div>
 
         <div className='space-y-4 text-center'>
-          <Link to={`/cart/${cartAdd.id}`} state={qty}>
+          <Link to={`/cart/${cartAdd.id}`} state={{ qty, total }}>
             <a
               href='#'
               className='block w-full p-3 text-sm rounded-lg bg-yellow-400 text-black'
